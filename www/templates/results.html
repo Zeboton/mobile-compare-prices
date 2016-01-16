@@ -1,0 +1,16 @@
+<ion-view title="Results">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <ion-list ng-repeat="group in groups" >
+            <h2>Item #{{$index + 1}}</h2>
+            <label class="item" name="price">
+                Price: {{group.price}}
+            </label>
+            <label class="item" name="quantity">
+                Quantity: {{group.quantity}}
+            </label>
+            <label class="item" name="result" style="font-weight: bold" group="{{group}}" z-if>
+                Result: {{group.ratio}}
+            </label>
+        </ion-list>
+    </ion-content>
+</ion-view>

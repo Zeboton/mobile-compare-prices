@@ -1,0 +1,19 @@
+<ion-view title="Compare price per one unit">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">      
+        <form id="compare-form" class="list" >
+            <div ng-repeat="group in groups">
+                <h2>Item #{{$index + 1}}</h2>
+                <label class="item item-input" name="price">
+                    <span class="input-label">Price</span>
+                    <input type="number" min="1" ng-model="group.price" required>
+                </label>
+                <label class="item item-input" name="quantity">
+                    <span class="input-label">Quantity</span>
+                    <input type="number" min="1" ng-model="group.quantity" required>
+                </label>
+            </div>
+        </form>
+        <button class="button button-stable button-icon button-small icon-left ion-android-add button-full" ng-click="add()">Add more items</button>
+        <button class="button button-balanced button-block button-large" ng-click="go('/tabs/results')">Calculate!</button>
+    </ion-content>
+</ion-view>
